@@ -1,3 +1,5 @@
+%define Werror_cflags %nil
+
 Name:           eid-mw
 Version:        4.0.0
 Release:        1
