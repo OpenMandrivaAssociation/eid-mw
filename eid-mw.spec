@@ -8,6 +8,7 @@ URL:            http://code.google.com/p/eid-mw/
 Source0:        http://eid-mw.googlecode.com/files/%{name}-%{version}-1135.tar.gz
 BuildRequires:  pkgconfig(libpcsclite)
 BuildRequires:	pkgconfig(QtCore)
+BuildRequires:	pkgconfig(gtk+-2.0)
 
 %description
 Software that support electronic person identification for Belgian eID.
