@@ -16,7 +16,8 @@ Software that support electronic person identification for Belgian eID.
 %setup -q
 
 %build
-%configure2_5x
+%configure2_5x \
+	--with-qt
 
 %make
 
