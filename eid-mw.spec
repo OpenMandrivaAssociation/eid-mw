@@ -8,6 +8,7 @@ License:        LGPLv3
 Group:          Networking/Other
 URL:            http://code.google.com/p/eid-mw/
 Source0:        http://eid-mw.googlecode.com/files/%{name}-%{version}-1135.tar.gz
+Patch0:			eid-mw-4.0.2_p1188+gcc-4.7.patch
 BuildRequires:  pkgconfig(libpcsclite)
 BuildRequires:	pkgconfig(QtCore)
 BuildRequires:	pkgconfig(gtk+-2.0)
@@ -17,6 +18,7 @@ Software that support electronic person identification for Belgian eID.
 
 %prep
 %setup -q
+%apply_patches
 
 %build
 %configure2_5x \
