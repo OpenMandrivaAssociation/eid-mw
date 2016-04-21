@@ -8,6 +8,7 @@ License:        LGPLv3
 Group:          Networking/Other
 URL:            http://github.com/Fedict/eid-mw2
 Source0:        https://dist.eid.belgium.be/continuous/sources/%{name}-%{version}-v%{version}.tar.gz
+Source100:	%{name}.rpmlintrc
 BuildRequires:  pkgconfig(libpcsclite)
 BuildRequires:	pkgconfig(QtCore)
 BuildRequires:	pkgconfig(gtk+-2.0)
@@ -30,6 +31,8 @@ Software that support electronic person identification for Belgian eID.
 
 %install
 %makeinstall_std
+
+desktop-file-edit --set-key=Exec --set-value=%{_bindir}/about-eid-mw %{buildroot}%{_datadir}/applications/about-eid-mw.desktop
 
 %find_lang about-%{name}
 
