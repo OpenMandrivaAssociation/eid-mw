@@ -21,7 +21,7 @@ BuildRequires:	openssl-perl
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(p11-kit-1)
 Requires:	%{mklibname eidviewer 0} = %{EVRD}
-Requires:	%{mklibname beidpkcs11i 0} = %{EVRD}
+Requires:	%{mklibname beidpkcs11 0} = %{EVRD}
 
 %description
 Software that support electronic person identification for Belgian eID.
