@@ -1,5 +1,6 @@
 %define Werror_cflags %nil
 %define _disable_rebuild_configure 1
+%define devname %mklibname eid-viewer -d
 
 Name:           eid-mw
 Version:        4.4.5
@@ -16,11 +17,40 @@ BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libproxy-1.0)
 BuildRequires:	openssl-perl
+Requires:	%{mklibname eidviewer 0} = %{EVRD}
+Requires:	%{mklibname beidpkcs11i 0} = %{EVRD}
 
 %description
 Software that support electronic person identification for Belgian eID.
 
 %libpackage beidpkcs11 0
+%libpackage eidviewer 0
+
+%package -n	%{devname}
+Summary:	Development files for %{name}
+Group:		Development/C
+Provides:	%{name}-devel = %{EVRD}
+Requires:	%{mklibname eidviewer 0} = %{EVRD}
+Requires:	%{mklibname beidpkcs11 0} = %{EVRD}
+
+%description -n	%{devname}
+This package includes the development files for %{name}.
+
+%package -n	eid-viewer
+Summary:	Belgium electronic identity card viewer
+Requires:	eid-mw
+Requires:	ccid
+Requires:	pcsc-lite
+
+%description -n eid-viewer
+The eid-viewer application allows the user to read out any information from
+a Belgian electronic identity card. Both identity information and information
+about the stored cryptographic keys can be read in a user-friendly manner,
+and can easily be printed out or stored for later reviewal.
+
+The application verifies the signature of the identity information,
+checks whether it was signed by a government-issued key, and optionally
+checks the certificate against the government's Trust Service.
 
 %prep
 %setup -q
@@ -41,16 +71,31 @@ autoreconf -i --force
 %install
 %makeinstall_std
 
-desktop-file-edit --set-key=Exec --set-value=%{_bindir}/about-eid-mw %{buildroot}%{_datadir}/applications/about-eid-mw.desktop
+%find_lang dialogs-beid
 
-%find_lang about-%{name}
-
-%files -f about-%{name}.lang
-
-%doc AUTHORS README NEWS
+%files -f dialogs-beid.lang
+%doc AUTHORS
 %{_bindir}/about-eid-mw
 %{_libexecdir}/beid-*
-%{_libdir}/*.so
-%{_datadir}/applications/about-eid-mw.desktop
+%{_bindir}/beid-update-nssdb
 %{_datadir}/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/belgiumeid@eid.belgium.be.xpi
+%{_datadir}/p11-kit/
+%{_prefix}/lib/mozilla/
+%{_libdir}/pkcs11/beidpkcs11.so
+%{_libdir}/libbeidpkcs11.so
+%{_sysconfdir}/xdg/autostart/beid-update-nssdb.desktop
 
+%files -n %{devname}
+%{_includedir}/eid-util/
+%{_libdir}/pkgconfig/
+%{_includedir}/rsaref220/
+%{_includedir}/eid-viewer/
+%{_libdir}/libeid*.so
+
+%files -n eid-viewer
+%{_bindir}/eid-viewer
+%{_datadir}/locale/*/LC_MESSAGES/eid-viewer.mo
+%{_datadir}/applications/eid-viewer.desktop
+%{_datadir}/eid-mw/
+%{_datadir}/icons/hicolor/*/*/eid-viewer.png
+%{_datadir}/glib-2.0/schemas/
