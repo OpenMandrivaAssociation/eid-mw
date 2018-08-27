@@ -16,6 +16,7 @@ BuildRequires:	pkgconfig(QtCore)
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libproxy-1.0)
+BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	openssl-perl
 Requires:	%{mklibname eidviewer 0} = %{EVRD}
 Requires:	%{mklibname beidpkcs11i 0} = %{EVRD}
