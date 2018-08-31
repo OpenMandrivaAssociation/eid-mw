@@ -16,7 +16,8 @@ BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libproxy-1.0)
 BuildRequires:	pkgconfig(libxml-2.0)
-BuildRequires:	openssl-perl
+BuildRequires:	openssl
+BuildRequires:	openssl-devel
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(p11-kit-1)
 Requires:	%{mklibname eidviewer 0} = %{EVRD}
