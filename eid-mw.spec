@@ -12,7 +12,6 @@ URL:            http://github.com/Fedict/eid-mw
 Source0:	https://github.com/Fedict/eid-mw/archive/%{name}-%{version}.tar.xz
 Source100:	%{name}.rpmlintrc
 BuildRequires:  pkgconfig(libpcsclite)
-BuildRequires:	pkgconfig(QtCore)
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libproxy-1.0)
