@@ -4,12 +4,12 @@
 
 Name:           eid-mw
 Version:        4.4.5
-Release:        1
+Release:        2
 Summary:        The eID Middleware offers components for using the Belgian eID
 License:        LGPLv3
 Group:          Networking/Other
 URL:            http://github.com/Fedict/eid-mw
-Source0:	https://github.com/Fedict/eid-mw/archive/v%{version}.tar.gz
+Source0:	https://github.com/Fedict/eid-mw/archive/%{name}-%{version}.tar.xz
 Source100:	%{name}.rpmlintrc
 BuildRequires:  pkgconfig(libpcsclite)
 BuildRequires:	pkgconfig(QtCore)
