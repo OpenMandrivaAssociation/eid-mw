@@ -62,6 +62,7 @@ checks the certificate against the government's Trust Service.
 %build
 sed -i -e 's:/beid/rsaref220:/rsaref220:' configure.ac
 sed -i -e 's:/beid::' cardcomm/pkcs11/src/libbeidpkcs11.pc.in
+sed -i "s%c_rehash%openssl rehash%g" plugins_tools/eid-viewer/Makefile.am
 %config_update
 autoreconf -fiv
 autoreconf -i --force
