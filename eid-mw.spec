@@ -57,7 +57,7 @@ checks the certificate against the government's Trust Service.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 sed -i -e 's:/beid/rsaref220:/rsaref220:' configure.ac
