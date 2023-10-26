@@ -19,15 +19,10 @@ BuildRequires:  pkgconfig(libcurl)
 BuildRequires:  pkgconfig(libpcsclite)
 BuildRequires:	pkgconfig(libproxy-1.0)
 BuildRequires:	pkgconfig(libxml-2.0)
-#BuildRequires:	openssl
+BuildRequires:	openssl
 BuildRequires:	pkgconfig(openssl)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(p11-kit-1)
-#Requires:	%{mklibname eidviewer} = %{EVRD}
-#Requires:	%{mklibname beidpkcs11} = %{EVRD}
-
-#libpackage beidpkcs11 0
-#libpackage eidviewer 0
 
 %description
 Software that support electronic person identification for Belgian eID.
@@ -49,8 +44,6 @@ Software that support electronic person identification for Belgian eID.
 Summary:	Development files for %{name}
 Group:		Development/C
 Provides:	%{name}-devel = %{EVRD}
-#Requires:	%{mklibname eidviewer 0} = %{EVRD}
-#Requires:	%{mklibname beidpkcs11 0} = %{EVRD}
 
 %description -n	%{devname}
 This package includes the development files for %{name}.
