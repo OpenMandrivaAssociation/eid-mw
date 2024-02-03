@@ -4,7 +4,7 @@
 
 Summary:        The eID Middleware offers components for using the Belgian eID
 Name:           eid-mw
-Version:        5.1.13
+Version:        5.1.15
 Release:        1
 License:        LGPLv3
 Group:          Networking/Other
