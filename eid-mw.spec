@@ -23,6 +23,8 @@ BuildRequires:	openssl
 BuildRequires:	pkgconfig(openssl)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(p11-kit-1)
+BuildRequires:	git-core
+BuildRequires:	autoconf-archive
 
 %patchlist
 eid-mw-5.1.16-buildfix.patch
