@@ -24,6 +24,9 @@ BuildRequires:	pkgconfig(openssl)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(p11-kit-1)
 
+%patchlist
+eid-mw-5.1.16-buildfix.patch
+
 %description
 Software that support electronic person identification for Belgian eID.
 
@@ -100,7 +103,7 @@ checks the certificate against the government's Trust Service.
 #sed -i "s%c_rehash%openssl rehash%g" plugins_tools/eid-viewer/Makefile.am
 #config_update
 #autoreconf -fiv
-#autoreconf -i --force
+autoreconf -i --force
 
 %configure \
 	--enable-p11v220 \
