@@ -8,7 +8,7 @@ Version:        5.1.16
 Release:        2
 License:        LGPLv3
 Group:          Networking/Other
-URL:            http://github.com/Fedict/eid-mw
+URL:            https://github.com/Fedict/eid-mw
 Source0:		https://dist.eid.belgium.be/continuous/sources/%{name}-%{version}-v%{version}.tar.gz
 #Source100:	%{name}.rpmlintrc
 BuildRequires:	pkgconfig(gpg-error)
