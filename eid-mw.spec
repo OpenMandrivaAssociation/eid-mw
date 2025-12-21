@@ -11,6 +11,10 @@ Group:          Networking/Other
 URL:            https://github.com/Fedict/eid-mw
 Source0:		https://dist.eid.belgium.be/continuous/sources/%{name}-%{version}-v%{version}.tar.gz
 #Source100:	%{name}.rpmlintrc
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(gpg-error)
 BuildRequires:	pkgconfig(gtk+-3.0)
 #BuildRequires:	pkgconfig(gtk+-4.0)
