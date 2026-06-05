@@ -5,7 +5,7 @@
 Summary:        The eID Middleware offers components for using the Belgian eID
 Name:           eid-mw
 Version:        5.1.16
-Release:        3
+Release:        4
 License:        LGPLv3
 Group:          Networking/Other
 URL:            https://github.com/Fedict/eid-mw
