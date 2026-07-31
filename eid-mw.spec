@@ -4,8 +4,8 @@
 
 Summary:        The eID Middleware offers components for using the Belgian eID
 Name:           eid-mw
-Version:        5.1.16
-Release:        4
+Version:        5.1.31
+Release:        1
 License:        LGPLv3
 Group:          Networking/Other
 URL:            https://github.com/Fedict/eid-mw
@@ -31,7 +31,7 @@ BuildRequires:	git-core
 BuildRequires:	autoconf-archive
 
 %patchlist
-eid-mw-5.1.16-buildfix.patch
+# dropped (no longer applies): eid-mw-5.1.31-buildfix.patch
 
 %description
 Software that support electronic person identification for Belgian eID.
@@ -101,7 +101,7 @@ checks the certificate against the government's Trust Service.
 #----------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n %{name}-%{version}-v%{version}
+%autosetup -p1 -n eid-mw-5.1.31-v5.1.31
 
 %build
 #sed -i -e 's:/beid/rsaref220:/rsaref220:' configure.ac
